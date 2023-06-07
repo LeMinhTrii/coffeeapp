@@ -3,7 +3,7 @@ import { useRoutes } from "react-router-dom";
 import { PATH } from "../paths";
 import Home from "../pages";
 import Detail from "../pages/detail";
-import MainLayout from "../layouts/MainLayout";
+import MainLayout from "../layouts/mainLayout";
 import AboutLayout from "../layouts/aboutLayout";
 import About from "../pages/about";
 import Service from "../pages/about/service";
