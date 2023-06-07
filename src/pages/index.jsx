@@ -14,7 +14,7 @@ import { scroll } from "../assets/js/scrolltop";
 import { message } from "antd";
 import { useCart } from "../components/Context/CartContext";
 import { useGetCategory } from "../hooks/useGetCategory";
-import coffeBannerImage from "../assets/image/coffebanner.png";
+
 export default function Home() {
   // lib slider
   const { data } = useGetProduct();
@@ -83,7 +83,7 @@ export default function Home() {
               </a>
             </div>
             <div className="banner_content-photo">
-              <img src={coffeBannerImage} alt="" />
+              <img src={require("./assets/image/coffebanner.png")} alt="" />
             </div>
           </div>
         </div>
