@@ -101,7 +101,10 @@ export default function Header() {
           </div> */}
           <div className="header_content-logo">
             <Link to={PATH.home}>
-              <img src="/src/assets/image/coffee-logo.png" alt="" />
+              <img
+                src="https://res.cloudinary.com/dsuxginpx/image/upload/v1686175956/static/coffee-logo_kdo4w3.webp"
+                alt=""
+              />
             </Link>
           </div>
           <div className="header_content-box">

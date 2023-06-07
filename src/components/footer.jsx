@@ -5,7 +5,11 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="footer">
-      <img src="/src/assets/image/footer-img.png" alt="" className="photo" />
+      <img
+        src="https://res.cloudinary.com/dsuxginpx/image/upload/v1686175965/static/footer-img_qhfgbe.png"
+        alt=""
+        className="photo"
+      />
       <div className="container">
         <div className="footer_content">
           <div className="footer_content-box">

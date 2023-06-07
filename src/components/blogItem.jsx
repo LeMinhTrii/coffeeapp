@@ -56,7 +56,7 @@ export default function BlogItem({ thumnail, day, name, desc }) {
   return (
     <StyleBlog>
       <div className="thumnail">
-        <img src={`/src/assets/image/${thumnail}`} alt="" />
+        <img src={thumnail} alt="" />
       </div>
       <p className="day">{day}</p>
       <p className="name">{name}</p>

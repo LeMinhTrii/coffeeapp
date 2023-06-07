@@ -165,7 +165,10 @@ export default function Home() {
           <div className="introduce_content">
             <div className="introduce_content-box">
               <div className="thumnail">
-                <img src="/src/assets/image/introthumnail.png" alt="" />
+                <img
+                  src="https://res.cloudinary.com/dsuxginpx/image/upload/v1686175931/static/introthumnail_eairvo.png"
+                  alt=""
+                />
               </div>
               <div className="content">
                 <h2 className="heading">Brasilian Coffee Buy 1 + Get 1 Free</h2>
@@ -215,7 +218,9 @@ export default function Home() {
             </div>
             <div className="blog_content-box">
               <BlogItem
-                thumnail={"blogone.jpg"}
+                thumnail={
+                  "https://res.cloudinary.com/dsuxginpx/image/upload/v1686175948/static/blogone_dhzpsk.jpg"
+                }
                 day={"Webheay Theme | 17 January 2021"}
                 name={"Repeat Predefined Chunks"}
                 desc={
@@ -223,7 +228,9 @@ export default function Home() {
                 }
               />
               <BlogItem
-                thumnail={"blogtwo.jpg"}
+                thumnail={
+                  "https://res.cloudinary.com/dsuxginpx/image/upload/v1686175948/static/blogtwo_pi1omr.jpg"
+                }
                 day={"Webheay Theme | 17 January 2021"}
                 name={"Repeat Predefined Chunks"}
                 desc={
@@ -231,7 +238,9 @@ export default function Home() {
                 }
               />
               <BlogItem
-                thumnail={"blogthree.jpg"}
+                thumnail={
+                  "https://res.cloudinary.com/dsuxginpx/image/upload/v1686175948/static/blogthree_uwpt9z.jpg"
+                }
                 day={"Webheay Theme | 17 January 2021"}
                 name={"Repeat Predefined Chunks"}
                 desc={

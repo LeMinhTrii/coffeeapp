@@ -4,7 +4,10 @@ export default function Job() {
   return (
     <>
       <div className="photo">
-        <img src="/src/assets/image/aboutthree.jpg" alt="" />
+        <img
+          src="https://res.cloudinary.com/dsuxginpx/image/upload/v1686175922/static/aboutthree_gqgp2y.jpg"
+          alt=""
+        />
       </div>
       <div className="content">
         <p className="title">NGHỀ NGHIỆP</p>

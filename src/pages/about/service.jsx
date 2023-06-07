@@ -4,7 +4,10 @@ export default function Service() {
   return (
     <>
       <div className="photo">
-        <img src="/src/assets/image/abouttwo.jpg" alt="" />
+        <img
+          src="https://res.cloudinary.com/dsuxginpx/image/upload/v1686175922/static/abouttwo_miklpm.jpg"
+          alt=""
+        />
       </div>
       <div className="content">
         <p className="title">DỊCH VỤ</p>

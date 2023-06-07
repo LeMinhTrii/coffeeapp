@@ -4,7 +4,10 @@ export default function About() {
   return (
     <>
       <div className="photo">
-        <img src="/src/assets/image/aboutone.jpg" alt="" />
+        <img
+          src="https://res.cloudinary.com/dsuxginpx/image/upload/v1686175922/static/aboutone_dkydp6.jpg"
+          alt=""
+        />
       </div>
       <div className="content">
         <p className="title">NGUỒN GỐC</p>
