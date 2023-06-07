@@ -1,0 +1,82 @@
+.listorder {
+    background: url(/src/assets/image/Pattern_bgr.jpg) center no-repeat;
+    background-size: cover;
+    padding: 30px 0 50px;
+    &_content {
+        &-box {
+            padding: 50px 0 0;
+            .boxs {
+                display: grid;
+                grid-template-columns: 400px 1fr;
+                background: #e5e5e5;
+                margin-bottom: 20px;
+                .productlist {
+                    .list {
+                        padding: 20px;
+                        margin-bottom: 20px;
+                        .item {
+                            display: flex;
+                            align-items: center;
+                            gap: 30px;
+                            margin-bottom: 10px;
+                            .price {
+                                margin: 5px 0;
+                            }
+                            a {
+                                color: #000;
+                                font-size: 18px;
+                                color: #53a16e;
+                                font-family: "Roboto", sans-serif;
+                            }
+                        }
+                        .total {
+                            font-family: "Roboto", sans-serif;
+                            font-size: 20px;
+                            color: #a91111;
+                        }
+                    }
+                }
+                .infor-customer {
+                    padding: 20px 0 0;
+                    p {
+                        margin-bottom: 10px;
+                        font-size: 15px;
+                        color: #000;
+                        span {
+                            font-family: "Roboto", sans-serif;
+                            font-size: 17px;
+                            color: #a91111;
+                        }
+                    }
+                    .btnanimate {
+                        border-radius: 5px;
+                        border: none;
+                        cursor: pointer;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            .noneorder {
+                background: #e5e5e5;
+                position: relative;
+                height: 500px;
+                .content {
+                    @include center;
+                    text-align: center;
+                    .text {
+                        font-size: 30px;
+                        margin: 20px 0;
+                        color: #000;
+                        font-family: "Roboto", sans-serif;
+                    }
+                    .btnanimate {
+                        border: none;
+                        a {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

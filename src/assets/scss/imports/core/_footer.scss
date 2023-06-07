@@ -1,0 +1,103 @@
+// footer
+.footer {
+    height: 100%;
+    background: url(/src/assets/image/foter.jpg) no-repeat center;
+    background-size: cover;
+    position: relative;
+    &::after {
+        position: absolute;
+        content: "";
+        background: rgba(0, 0, 0, 0.7);
+        inset: 0;
+        z-index: 1;
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        @include size(100%);
+        z-index: 2;
+        background: url(/src/assets/image/pattern-footer.png) no-repeat;
+        background-position-x: -290px;
+    }
+    .photo {
+        position: absolute;
+        z-index: 2;
+        top: -40px;
+        right: 200px;
+        width: 420px;
+    }
+    &_content {
+        &-box {
+            padding: 320px 0 100px;
+            position: relative;
+            z-index: 8;
+            display: flex;
+            .item:not(:first-child) {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                color: $white-cl;
+                .title {
+                    font-size: 20px;
+                    font-weight: 600;
+                    margin-bottom: 30px;
+                }
+                .text {
+                    color: #888;
+                    font-size: 18px;
+                    margin: 10px 0 15px;
+                    cursor: pointer;
+                    transition: 0.4s;
+                    &:hover {
+                        color: $green-cl;
+                        transition: 0.4s;
+                    }
+                }
+            }
+            .item:first-child {
+                width: 350px;
+                .desc {
+                    max-width: 280px;
+                    line-height: 20px;
+                    color: #888;
+                    font-size: 18px;
+                    padding: 40px 0 20px;
+                }
+                .rating {
+                    .title {
+                        color: $white-cl;
+                        font-weight: 600;
+                        font-size: 18px;
+                    }
+                    .star {
+                        padding: 15px 0;
+                        svg {
+                            margin-right: 5px;
+                        }
+                    }
+                    .text {
+                        font-size: 17px;
+                        color: #888;
+                        span {
+                            color: $green-cl;
+                        }
+                    }
+                    .socialnetwork {
+                        padding-top: 20px;
+                        svg {
+                            width: 30px;
+                            fill: #8d8d8d;
+                            margin-right: 20px;
+                            transition: 0.4s;
+                            cursor: pointer;
+                            &:hover {
+                                transition: 0.4s;
+                                fill: $green-cl;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

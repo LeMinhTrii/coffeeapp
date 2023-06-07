@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Wix+Madefor+Display:wght@500&display=swap");
+.main {
+    // section banner
+    .banner {
+        @include size(100%);
+        position: relative;
+        background: url(/src/assets/image/banner.jpg) no-repeat center;
+        background-size: cover;
+        padding-top: 160px;
+        &::before {
+            position: absolute;
+            content: "";
+            inset: 0;
+            background: rgba($color: #000000, $alpha: 0.8);
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            background: url(/src/assets/image/pattern-min.png) no-repeat center;
+            z-index: 1;
+            @include size(100%);
+            bottom: -310px;
+            background-position-x: -330px;
+        }
+        &_content {
+            position: relative;
+            z-index: 2;
+            @include flex(center, space-around);
+            &-box {
+                margin-left: 60px;
+                opacity: 0;
+                animation: opacity 2s 1s linear forwards;
+                .text {
+                    position: relative;
+                    font-size: 16px;
+                    padding-left: 45px;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    line-height: 1;
+                    color: $white-cl;
+                    &::before {
+                        @include centerY;
+                        left: 0;
+                        content: "";
+                        @include size(30px, 2px);
+                        background: $white-cl;
+                    }
+                }
+                .heading {
+                    font-size: 60px;
+                    text-transform: capitalize;
+                    line-height: 1;
+                    padding: 18px 0 58px;
+                    color: $white-cl;
+                }
+                .desc {
+                    color: $white-cl;
+                    font-size: 17px;
+                }
+                .btn {
+                    padding: 15px 30px;
+                    display: inline-block;
+                    color: $white-cl;
+                    border-radius: 5px;
+                    background: $green-cl;
+                    margin-top: 25px;
+                }
+            }
+            &-photo {
+                opacity: 0;
+                animation: opacity 2s linear forwards;
+                img {
+                    width: 600px;
+                }
+            }
+        }
+    }
+    // section category
+    .category {
+        background: url(/src/assets/image/Pattern_bgr.jpg) center no-repeat;
+        background-size: cover;
+        &_content {
+            &-box {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 30px;
+            }
+        }
+    }
+    // section product
+    .product {
+        background: url(/src/assets/image/Pattern_bgr.jpg) center no-repeat;
+        background-size: cover;
+        &_content {
+            &-tablist {
+                text-align: center;
+                .tab {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    margin: 40px 15px;
+                    background: $white-cl;
+                    border-radius: 7px;
+                    font-size: 18px;
+                    color: $black-cl;
+                    font-family: "Wix Madefor Display", sans-serif;
+                    &.active {
+                        background: $green-cl;
+                        color: #fff;
+                    }
+                }
+            }
+            &-box {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            &-btn {
+                padding: 12px 60px;
+                color: #fff;
+                font-weight: 600;
+                border-radius: 5px;
+                background: #0d47a1;
+                position: relative;
+                overflow: hidden;
+                background: $green-cl;
+                border: none;
+                cursor: pointer;
+                margin-top: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                &::after {
+                    position: absolute;
+                    content: "";
+                    height: 100%;
+                    width: 50px;
+                    opacity: 0;
+                    background: linear-gradient(
+                        90deg,
+                        rgba(255, 255, 255, 0) 0%,
+                        rgba(255, 255, 255, 1) 50%,
+                        rgba(255, 255, 255, 0) 100%
+                    );
+                    mix-blend-mode: overlay;
+                    left: 0;
+                    top: 0;
+                }
+                &:hover {
+                    &::after {
+                        animation: line 1.5s linear forwards;
+                    }
+                }
+                a {
+                    color: $white-cl;
+                }
+            }
+        }
+    }
+    // section introduce
+    .introduce {
+        padding: 70px 0;
+        background: url(/src/assets/image/Pattern_bgr.jpg) center no-repeat;
+        background-size: cover;
+        &_content {
+            &-box {
+                display: grid;
+                grid-template-columns: 647px 1fr;
+                .thumnail {
+                    position: relative;
+                    padding-bottom: calc(392 / 647 * 100%);
+                    img {
+                        @include image;
+                    }
+                }
+                .content {
+                    .heading {
+                        font-family: "Wix Madefor Display", sans-serif;
+                        font-size: 40px;
+                        font-weight: 600;
+                        max-width: 350px;
+                        line-height: 50px;
+                    }
+                    .text {
+                        color: $green-cl;
+                        font-size: 20px;
+                        margin: 20px 0 40px;
+                        font-weight: 600;
+                    }
+                    .desc {
+                        max-width: 340px;
+                        font-size: 18px;
+                        line-height: 24px;
+                        color: #888;
+                    }
+                    .btn {
+                        border: none;
+                        background: $green-cl;
+                        padding: 13px 40px;
+                        color: $white-cl;
+                        margin: 20px 0;
+                        font-size: 17px;
+                        border-radius: 7px;
+                        position: relative;
+                        cursor: pointer;
+                        font-family: "Wix Madefor Display", sans-serif;
+                        &::after {
+                            position: absolute;
+                            content: "";
+                            @include size(10px, 100%);
+                            background: $white-cl;
+                            top: 0;
+                            left: 0;
+                            filter: blur(10px);
+                            transform: translateX(-100px);
+                        }
+                        &:hover {
+                            &::after {
+                                animation: hover 1s linear forwards;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //  section selling
+    .selling {
+        background: url(/src/assets/image/Pattern_bgr.jpg) center no-repeat;
+        background-size: cover;
+        &_content {
+            &-box {
+                padding: 50px 0;
+            }
+        }
+    }
+    // section blog
+    .blog {
+        background: url(/src/assets/image/Pattern_bgr.jpg) center no-repeat;
+        background-size: cover;
+        &_content {
+            &-box {
+                padding: 50px 0 100px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+        }
+    }
+}
+
+@keyframes hover {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(70px);
+    }
+    50% {
+        transform: translateX(180px);
+    }
+    100% {
+        transform: translateX(200px);
+    }
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    75% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}

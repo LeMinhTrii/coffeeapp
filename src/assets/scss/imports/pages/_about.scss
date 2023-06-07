@@ -1,0 +1,73 @@
+.main {
+    .about {
+        padding: 20px 0 50px;
+        background: url(/src/assets/image/Pattern_bgr.jpg) no-repeat center;
+        background-size: cover;
+        &_content {
+            &-tabs {
+                @include flex;
+                .tab {
+                    padding: 10px 30px;
+                    margin: 30px 10px 40px;
+                    background: $white-cl;
+                    font-size: 18px;
+                    color: $black-cl;
+                    cursor: pointer;
+                    transition: 0.4s;
+                    &:hover,
+                    &.active {
+                        background: $green-cl;
+                        color: $white-cl;
+                        transition: 0.4s;
+                    }
+                }
+            }
+            &-box {
+                display: grid;
+                grid-template-columns: 600px 1fr;
+                gap: 30px;
+                .photo {
+                    position: relative;
+                    overflow: hidden;
+                    padding-bottom: 100%;
+                    img {
+                        @include image;
+                    }
+                }
+                .content {
+                    .title {
+                        font-size: 50px;
+                        font-weight: 600;
+                        font-family: "Merriweather", serif;
+                        color: #53382c;
+                        margin-bottom: 30px;
+                    }
+                    .name {
+                        font-size: 20px;
+                        margin-bottom: 20px;
+                        font-family: "Raleway", sans-serif;
+                        font-weight: bold;
+                    }
+                    .desc {
+                        margin-bottom: 20px;
+                        font-size: 18px;
+                        line-height: 20px;
+                        letter-spacing: 1px;
+                        font-family: "Raleway", sans-serif;
+                        font-weight: bold;
+                        span {
+                            color: #f40000;
+                            font-weight: bolder;
+                        }
+                    }
+                    .slogan {
+                        font-weight: 600;
+                        font-size: 16px;
+                        font-family: "Raleway", sans-serif;
+                        color: $green-cl;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,137 @@
+.manager {
+    transition: 0.4s;
+    &.dark {
+        transition: 0.4s;
+        .manager_content {
+            &-tabs {
+                background: #2e363f;
+            }
+            &-box {
+                background: #000000;
+                .heading {
+                    color: #fff;
+                }
+                td,
+                th {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    &_content {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        &-tabs {
+            height: 100vh;
+            position: relative;
+            background: #2e363f;
+            .tab {
+                display: block;
+                color: #fff;
+                padding: 15px 20px;
+                transition: 0.4s;
+                &:hover,
+                &.active {
+                    background: #992931;
+                    transition: 0.4s;
+                }
+                span {
+                    margin-left: 15px;
+                }
+            }
+            .account {
+                display: flex;
+                gap: 15px;
+                align-items: center;
+                padding: 15px 20px;
+                background: #a5a5a50e;
+                .thumnail {
+                    border-radius: 50%;
+                    overflow: hidden;
+                    @include size(50px);
+                    img {
+                        @include size(100%);
+                        object-fit: cover;
+                    }
+                }
+                .name {
+                    color: #fff;
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+            }
+            .text {
+                margin-bottom: 20px;
+                color: #fff;
+                font-size: 18px;
+                font-weight: 600;
+                padding: 7px 25px 10px;
+                background: #a5a5a50e;
+                @include flex(center, space-between);
+            }
+        }
+        &-box {
+            .textbox {
+                position: relative;
+                padding: 20px 30px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .heading {
+                    display: inline-block;
+                    color: #000;
+                    font-size: 35px;
+                    font-weight: 600;
+                }
+                .search {
+                    @include centerX;
+                    width: 600px;
+                    padding: 7px 10px;
+                    border-radius: 10px;
+                }
+            }
+            .productlist_account {
+                overflow-y: scroll;
+                height: 610px;
+                margin-top: 30px;
+            }
+            table {
+                width: 100%;
+                padding: 35px 30px 0;
+                display: block;
+            }
+            td,
+            th {
+                border: 1px solid #dddddd;
+                text-align: center;
+                padding: 8px;
+            }
+            td {
+                &.thumnail {
+                    position: relative;
+                    width: 100px;
+                    height: 100px;
+                    img {
+                        @include image;
+                        min-height: initial;
+                    }
+                }
+                &:nth-child(2) {
+                    padding: 0;
+                }
+                &:nth-child(4) {
+                    text-align: left;
+                    line-height: 25px;
+                }
+            }
+            th {
+                &:nth-child(3) {
+                    width: 12%;
+                }
+                &:nth-child(8) {
+                    width: 10%;
+                }
+            }
+        }
+    }
+}

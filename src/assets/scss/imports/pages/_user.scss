@@ -1,0 +1,225 @@
+.noneuser {
+    background: #222;
+    padding-top: 130px;
+}
+
+.userbanner {
+    background: url(/src/assets/image/Pattern_bgr.jpg) center no-repeat;
+    background-size: cover;
+    &_content {
+        &-photo {
+            padding: 20px 0 30px;
+            .coverimage {
+                overflow: hidden;
+                height: 500px;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                position: relative;
+                img {
+                    @include image;
+                }
+                .camera {
+                    position: absolute;
+                    padding: 10px;
+                    border-radius: 50%;
+                    background: $white-cl;
+                    content: "";
+                    right: 20px;
+                    top: 20px;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+            }
+            .userphoto {
+                height: 130px;
+                background: #323232;
+                position: relative;
+                .thumnail {
+                    position: relative;
+                    left: 40px;
+                    top: -80px;
+                    @include size(200px);
+                    overflow: hidden;
+                    img {
+                        @include size(200px);
+                        border-radius: 50%;
+                        display: block;
+                        padding: 5px;
+                        box-sizing: border-box;
+                        @include image;
+                    }
+                    .cameraavatar {
+                        position: absolute;
+                        padding: 10px;
+                        border-radius: 50%;
+                        background: #888;
+                        content: "";
+                        font-size: 20px;
+                        cursor: pointer;
+                        right: 2px;
+                        bottom: 30px;
+                    }
+                }
+                .name {
+                    position: absolute;
+                    top: 30px;
+                    left: 270px;
+                    color: $white-cl;
+                    font-weight: 600;
+                    font-size: 30px;
+                    font-family: "Roboto", sans-serif;
+                }
+            }
+            .tabs {
+                height: 100%;
+                background: #323232;
+                border-top: 1px solid #888;
+                padding-left: 50px;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                .tab {
+                    display: inline-block;
+                    padding: 20px 10px;
+                    color: #fff;
+                    font-size: 16px;
+                    margin-right: 20px;
+                    font-weight: 600;
+                    &.active,
+                    &:hover {
+                        color: $green-cl;
+                        border-bottom: 3px solid $green-cl;
+                    }
+                }
+            }
+        }
+        &-box {
+            background: #323232;
+            border-radius: 20px;
+            padding: 20px 0;
+            .heading {
+                color: #fff;
+                padding: 20px 50px 0;
+                font-size: 25px;
+                font-weight: 600;
+                font-family: "Roboto", sans-serif;
+            }
+            .form-group {
+                padding: 20px 50px;
+                input {
+                    background: transparent;
+                    color: #fff;
+                }
+                .flex {
+                    display: flex;
+                    justify-content: flex-end;
+                    .btnsave {
+                        margin-top: 10px;
+                        border-radius: 20px;
+                        text-transform: uppercase;
+                        color: $white-cl;
+                        background: #0d47a1;
+                        border: none;
+                        font-weight: 500;
+                        padding: 15px 40px;
+                        line-height: 2px;
+                    }
+                }
+            }
+        }
+        &-empty {
+            padding-bottom: 100px;
+        }
+    }
+}
+
+.popupchangeavatar,
+.popupcoverbackground {
+    position: fixed;
+    inset: 0;
+    background: rgba(50, 50, 50, 0.752);
+    z-index: 100;
+    visibility: hidden;
+    cursor: no-drop;
+    transition: 0.4s;
+    &.active {
+        transition: 0.4s;
+        cursor: pointer;
+        visibility: visible;
+    }
+    .box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 550px;
+        height: auto;
+        background: $white-cl;
+        padding: 30px;
+        border-radius: 20px;
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 30px;
+        .thumnail {
+            position: relative;
+            overflow: hidden;
+            padding-bottom: 100%;
+            img {
+                @include image;
+            }
+        }
+        .content {
+            .title {
+                font-size: 25px;
+                display: inline-block;
+                margin-bottom: 20px;
+                font-family: "Roboto", sans-serif;
+            }
+            .boxfile {
+                position: relative;
+                width: 100%;
+                height: auto;
+                background: #888;
+                color: #fff;
+                text-align: center;
+                line-height: 20px;
+                padding: 20px 0;
+                display: block;
+                font-family: "Roboto", sans-serif;
+                svg {
+                    display: block;
+                    margin: 0 auto;
+                    font-size: 50px;
+                }
+                .text {
+                    margin-top: 20px;
+                }
+                input {
+                    position: absolute;
+                    inset: 0;
+                    opacity: 0;
+                }
+            }
+            .save {
+                padding: 10px 25px;
+                display: block;
+                margin: 20px auto 0;
+                border: none;
+                border-radius: 20px;
+                color: #fff;
+                background: #0d47a1;
+                font-family: "Roboto", sans-serif;
+                cursor: pointer;
+            }
+        }
+        .close {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 30px;
+            cursor: pointer;
+            :hover {
+                color: red;
+            }
+        }
+    }
+}
