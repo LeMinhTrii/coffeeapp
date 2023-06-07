@@ -83,7 +83,10 @@ export default function Home() {
               </a>
             </div>
             <div className="banner_content-photo">
-              <img src="/assets/image/coffebanner.png" alt="" />
+              <img
+                src="https://res.cloudinary.com/dsuxginpx/image/upload/v1686175962/static/coffebanner_gjwhq4.webp"
+                alt=""
+              />
             </div>
           </div>
         </div>
