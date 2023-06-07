@@ -82,7 +82,7 @@ export default function Home() {
               </a>
             </div>
             <div className="banner_content-photo">
-              <img src="/src/assets/image/coffebanner.png" alt="" />
+              <img src="/assets/image/coffebanner.png" alt="" />
             </div>
           </div>
         </div>
