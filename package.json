@@ -24,7 +24,9 @@
         "react-slick": "^0.29.0",
         "sass": "^1.62.1",
         "slick-carousel": "^1.8.1",
-        "styled-components": "^6.0.0-rc.1"
+        "styled-components": "^6.0.0-rc.1",
+        "vite-plugin-assets": "^0.2.0",
+        "vite-plugin-copy": "^0.1.6"
     },
     "devDependencies": {
         "@types/react": "^18.0.28",
