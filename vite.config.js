@@ -13,7 +13,7 @@ export default defineConfig({
   plugins: [
     react(),
     copy({
-      patterns: [{ from: "src/assets/image", to: "assets/images" }],
+      patterns: [{ from: "../src/assets/image", to: "assets/image" }],
     }),
   ],
 });
