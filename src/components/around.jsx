@@ -33,13 +33,15 @@ const StyleAround = styled.div`
 `;
 export default function CategoryAround({ filepath, name_category, link }) {
   return (
-    <StyleAround>
+    <div className="item">
       <div className="thumnail">
-        <img src={filepath} alt="" />
+        <Link to={link}>
+          <img src={filepath} alt="" />
+        </Link>
       </div>
       <Link to={link} className="name">
         {name_category}
       </Link>
-    </StyleAround>
+    </div>
   );
 }

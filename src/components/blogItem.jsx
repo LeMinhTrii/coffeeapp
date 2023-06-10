@@ -54,13 +54,13 @@ const StyleBlog = styled.div`
 `;
 export default function BlogItem({ thumnail, day, name, desc }) {
   return (
-    <StyleBlog>
+    <div className="item">
       <div className="thumnail">
         <img src={thumnail} alt="" />
       </div>
       <p className="day">{day}</p>
       <p className="name">{name}</p>
       <p className="desc">{desc}</p>
-    </StyleBlog>
+    </div>
   );
 }

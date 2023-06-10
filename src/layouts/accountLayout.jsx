@@ -40,7 +40,10 @@ export default function AccountLayout() {
               </div>
               <div className="login_content-box">
                 <div className="thumnail">
-                  <img src="/src/assets/image/coffebanner.png" alt="" />
+                  <img
+                    src="https://res.cloudinary.com/dsuxginpx/image/upload/v1686175962/static/coffebanner_gjwhq4.webp"
+                    alt=""
+                  />
                 </div>
                 <div className="content">
                   <div className="tabs">

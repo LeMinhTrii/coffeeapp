@@ -238,6 +238,93 @@
             transform: translateX(-50%);
         }
     }
+    .nav {
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            cursor: pointer;
+            animation: nav 1s ease-in-out alternate;
+        }
+        opacity: 0;
+        transition: 1s;
+        cursor: no-drop;
+        visibility: hidden;
+        margin-top: 70px;
+        position: fixed;
+        inset: 0;
+        height: 40%;
+        padding: 30px 0;
+        background: #cbcbcb;
+        z-index: 100;
+        ul {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            li {
+                padding: 10px;
+                text-align: center;
+                a {
+                    color: #000;
+                    font-family: "Roboto";
+                    font-size: 17px;
+                    transition: 0.4s;
+                    &:hover {
+                        color: #8d262d;
+                        transition: 0.4s;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: $sm-max) {
+        // Tablet
+        .container-fuild {
+            padding: 0 15px;
+        }
+        &_content {
+            &-logo {
+                left: 70px;
+                z-index: 120;
+            }
+            &-box {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                position: absolute;
+                right: 20px;
+                z-index: 120;
+                a {
+                    &:nth-child(2),
+                    &:nth-child(3) {
+                        display: none;
+                    }
+                }
+                .hamburger {
+                    svg {
+                        color: $white-cl;
+                        font-size: 30px;
+                        margin-left: 8px;
+                    }
+                }
+                .user {
+                    .avt {
+                        width: 30px !important;
+                        height: 5px !important;
+                    }
+                }
+            }
+        }
+        &-nav {
+            display: none;
+        }
+    }
+    @media (max-width: $xs-max) {
+        // Mobile
+    }
+    @media (max-width: $xxs-max) {
+        // Small Mobile
+    }
 }
 
 // user menu
@@ -309,5 +396,14 @@
     }
     100% {
         transform: translateX(0);
+    }
+}
+
+@keyframes nav {
+    0% {
+        transform: translateY(-400px);
+    }
+    100% {
+        transform: translateY(0);
     }
 }

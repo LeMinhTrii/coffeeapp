@@ -147,7 +147,7 @@ export default function ProductItem({
     product_id: id,
   };
   return (
-    <StyleProduct className={column && "active"}>
+    <div className={column ? "item active" : "item"}>
       <div className="thumnail">
         <img src={urlThumnail} alt="" />
       </div>
@@ -179,7 +179,7 @@ export default function ProductItem({
           </button>
         </div>
       </div>
-    </StyleProduct>
+    </div>
   );
 }
 export const ProductItemSkeleton = ({ column }) => {

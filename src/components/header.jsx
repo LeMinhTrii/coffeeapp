@@ -8,6 +8,7 @@ import {
   faXmark,
   faArrowUp,
   faClipboardList,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { PATH } from "../paths";
@@ -82,6 +83,9 @@ export default function Header() {
     document.querySelector("#searchproduct").classList.toggle("active");
     document.querySelector(".header_search").classList.toggle("active");
   };
+  const handleOpenNav = () => {
+    document.querySelector(".header .nav").classList.toggle("active");
+  };
   let total = 0;
   cart &&
     cart.forEach((e) => {
@@ -110,7 +114,7 @@ export default function Header() {
           <div className="header_content-box">
             <div className="user">
               {data ? (
-                <StyleAvatar>
+                <StyleAvatar className="avt">
                   <img src={(data && data.urlAvatar) || PATH.imageUrlDefault} />
                 </StyleAvatar>
               ) : (
@@ -168,6 +172,9 @@ export default function Header() {
                 fontSize={25}
               />
               <span className="quantity_cart">{cart && cart.length}</span>
+            </div>
+            <div className="hamburger" onClick={handleOpenNav}>
+              <FontAwesomeIcon icon={faBars} />
             </div>
           </div>
         </div>
@@ -255,6 +262,37 @@ export default function Header() {
                 <ProductItemSearchSkeleton key={i} />
               ))}
         </div>
+      </div>
+      <div className="nav">
+        <ul>
+          <li>
+            <Link to={PATH.home}>Trang Chủ</Link>
+          </li>
+          <li>
+            <Link to={PATH.coffee}>Cà Phê </Link>
+          </li>
+          <li>
+            <Link to={PATH.preeze}>Preeze </Link>
+          </li>
+          <li>
+            <Link to={PATH.tea}>Trà </Link>
+          </li>
+          <li>
+            <Link to={PATH.different}>Khác </Link>
+          </li>
+          <li>
+            <Link to={PATH.about}>Về Chúng Tôi</Link>
+          </li>
+          <li>
+            <Link to={PATH.contact}>Liên Hệ</Link>
+          </li>
+          <li>
+            <Link to={PATH.whistlist}>Sản Phẩm Yêu Thích</Link>
+          </li>
+          <li>
+            <Link to={PATH.listorder}>Đơn Hàng</Link>
+          </li>
+        </ul>
       </div>
     </header>
   );

@@ -100,4 +100,34 @@
             }
         }
     }
+    @media (max-width: $sm-max) {
+        // Tablet
+    }
+    @media (max-width: $xs-max) {
+        // Mobile
+        margin-top: -1px;
+        overflow: hidden;
+        &::before {
+            @include size(200%, 100%);
+            background: url(/src/assets/image/wave1.svg) no-repeat;
+            background-position-y: -30px;
+            background-position-x: -50px;
+        }
+        .photo {
+            top: -35px;
+            right: -20px;
+            width: 220px;
+        }
+        &_content {
+            &-box {
+                padding: 120px 0 80px;
+                .item:not(:first-child) {
+                    display: none;
+                }
+            }
+        }
+    }
+    @media (max-width: $xxs-max) {
+        // Small Mobile
+    }
 }

@@ -141,7 +141,7 @@ export default function Home() {
                 Khác
               </NavLink>
             </div>
-            <div className="product_content-box">
+            <div className="product_content-box productcpn">
               {category &&
                 category
                   .slice(0, 4)
@@ -190,7 +190,7 @@ export default function Home() {
             <div className="selling_content-heading headings">
               Sản Phẩm <span>Bán Chạy</span>
             </div>
-            <div className="selling_content-box">
+            <div className="selling_content-box productcpn">
               <Slider {...slider}>
                 {data
                   ? data.map((e) => (
