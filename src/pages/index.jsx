@@ -31,6 +31,7 @@ export default function Home() {
       );
       await setCategory(Product.data);
     })();
+    document.querySelector(".header .nav").classList.remove("active");
   }, [categoryid]);
   // Xử Lý Dữ Liệu Theo Tab
   const handleTab = (e) => {
