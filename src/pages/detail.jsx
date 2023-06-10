@@ -183,7 +183,7 @@ export default function Detail() {
               <div className="related_content-heading headings">
                 Sản Phẩm Liên Quan
               </div>
-              <div className="related_content-box">
+              <div className="related_content-box productcpn">
                 <Slider {...slider}>
                   {related
                     ? related.map((e) => (

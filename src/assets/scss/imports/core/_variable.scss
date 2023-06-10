@@ -29,6 +29,9 @@ $cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
     }
     @media (max-width: $xs-max) {
         // Mobile
+        .pdnone {
+            padding: 70px 0 0;
+        }
     }
     @media (max-width: $xxs-max) {
         // Small Mobile

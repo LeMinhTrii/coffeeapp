@@ -61,6 +61,9 @@
                 z-index: 100;
                 display: inline-block;
             }
+            .hamburger {
+                display: none;
+            }
             .--cpn {
                 position: relative;
                 span {
@@ -279,20 +282,30 @@
     }
     @media (max-width: $sm-max) {
         // Tablet
+        &.active {
+            .header_content {
+                &-logo {
+                    left: 120px;
+                }
+                &-box {
+                    right: 80px;
+                }
+            }
+        }
         .container-fuild {
             padding: 0 15px;
         }
         &_content {
             &-logo {
-                left: 70px;
+                left: 120px;
                 z-index: 120;
             }
             &-box {
                 display: flex;
-                gap: 10px;
+                gap: 20px;
                 align-items: center;
                 position: absolute;
-                right: 20px;
+                right: 80px;
                 z-index: 120;
                 a {
                     &:nth-child(2),
@@ -301,6 +314,7 @@
                     }
                 }
                 .hamburger {
+                    display: block;
                     svg {
                         color: $white-cl;
                         font-size: 30px;
@@ -318,9 +332,35 @@
         &-nav {
             display: none;
         }
+        &-cart {
+            width: 392px;
+            transform: translateX(392px);
+            &.active {
+                animation: cart2 0.5s linear forwards;
+            }
+        }
     }
     @media (max-width: $xs-max) {
         // Mobile
+        &.active {
+            .header_content {
+                &-logo {
+                    left: 70px;
+                }
+                &-box {
+                    right: 20px;
+                }
+            }
+        }
+        &_content {
+            &-logo {
+                left: 70px;
+            }
+            &-box {
+                gap: 10px;
+                right: 20px;
+            }
+        }
     }
     @media (max-width: $xxs-max) {
         // Small Mobile
@@ -393,6 +433,15 @@
 @keyframes cart {
     0% {
         transform: translateX(320px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes cart2 {
+    0% {
+        transform: translateX(392px);
     }
     100% {
         transform: translateX(0);

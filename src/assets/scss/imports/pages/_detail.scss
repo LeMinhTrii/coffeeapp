@@ -86,6 +86,48 @@
                 }
             }
         }
+        @media (max-width: $sm-max) {
+            // Tablet
+            padding: 50px 0 30px;
+            &_content {
+                grid-template-columns: 300px 1fr;
+                gap: 35px;
+                &-box {
+                    margin-top: 15px;
+                    .name {
+                        font-size: 30px;
+                        font-family: "Roboto", serif;
+                    }
+                    .desc {
+                        max-width: 700px;
+                        padding: 15px 0 20px;
+                        font-size: 17px;
+                    }
+                    .price {
+                        font-size: 18px;
+                    }
+                    .btnadd {
+                        padding: 8px 30px;
+                    }
+                }
+            }
+        }
+        @media (max-width: $xs-max) {
+            // Mobile
+            padding: 40px 0 0;
+            &_content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                &-box {
+                    .name {
+                        font-size: 28px;
+                    }
+                }
+            }
+        }
+        @media (max-width: $xxs-max) {
+            // Small Mobile
+        }
     }
     // review
     .reviews {
@@ -166,7 +208,9 @@
             &-review {
                 margin-top: 30px;
                 overflow-y: scroll;
-                height: 360px;
+                min-height: 120px;
+                height: auto;
+                max-height: 330px;
                 margin-bottom: -18px;
                 .no_review {
                     position: relative;
@@ -192,6 +236,79 @@
                     }
                 }
             }
+        }
+        @media (max-width: $sm-max) {
+            // Tablet
+            padding: 20px 0 0;
+            &_content {
+                &-text {
+                    font-size: 25px;
+                }
+                &-form {
+                    .write {
+                        input[type="text"],
+                        button {
+                            font-size: 18px;
+                        }
+                    }
+                }
+                &-review {
+                    .no_review {
+                        height: 320px;
+                        .content {
+                            p {
+                                font-size: 25px;
+                                line-height: 25px;
+                            }
+                            svg {
+                                font-size: 60px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: $xs-max) {
+            // Mobile
+            padding: 20px 0 30px;
+            &_content {
+                &-text {
+                    font-size: 25px;
+                }
+                &-form {
+                    .user {
+                        .photo {
+                            @include size(60px);
+                        }
+                        .name {
+                            font-size: 22px;
+                        }
+                    }
+                    .write {
+                        input[type="text"],
+                        button {
+                            font-size: 16px;
+                        }
+                    }
+                }
+                &-review {
+                    .no_review {
+                        height: 300px;
+                        .content {
+                            p {
+                                font-size: 20px;
+                                line-height: 25px;
+                            }
+                            svg {
+                                font-size: 50px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: $xxs-max) {
+            // Small Mobile
         }
     }
     // section

@@ -44,8 +44,7 @@ export default function CategoryLayout() {
   }, [url]);
   return (
     <>
-      <StyleCoffe></StyleCoffe>
-
+      <StyleCoffe className="pdnone"></StyleCoffe>
       <main className="main">
         <section className="coffee">
           <div className="container">
@@ -77,7 +76,11 @@ export default function CategoryLayout() {
                       </select>
                     </div>
                   </div>
-                  <div className={status ? "list column" : "list"}>
+                  <div
+                    className={
+                      status ? "list productcpn column" : "list productcpn"
+                    }
+                  >
                     <Outlet />
                   </div>
                   <Paginate totalPage={page} />
