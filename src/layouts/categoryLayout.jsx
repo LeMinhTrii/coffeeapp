@@ -24,6 +24,7 @@ export default function CategoryLayout() {
   const { handleSort, page } = UsePaginate();
 
   useEffect(() => {
+    document.querySelector(".header .nav").classList.remove("active");
     scroll();
     if (url) {
       switch (url) {
