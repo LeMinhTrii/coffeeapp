@@ -155,6 +155,9 @@
                 .heading {
                     font-size: 22px;
                 }
+                .wishlistprd {
+                    grid-template-columns: 1fr 1fr !important;
+                }
             }
         }
     }

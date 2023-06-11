@@ -39,7 +39,7 @@ export default function ListOrderByUser() {
   return (
     <>
       {contextHolder}
-      <PaymentStyle></PaymentStyle>
+      <PaymentStyle className="pdnone"></PaymentStyle>
       <div className="listorder">
         <div className="container">
           <div className="listorder_content">

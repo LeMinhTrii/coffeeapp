@@ -83,7 +83,7 @@ export default function OrderList() {
   return (
     <>
       {contextHolder}
-      <PaymentStyle></PaymentStyle>
+      <PaymentStyle className="pdnone"></PaymentStyle>
       <div className="payment">
         <div className="container">
           <div className="payment_content">
