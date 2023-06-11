@@ -167,6 +167,22 @@
                         display: inline-block;
                         overflow: hidden;
                         background: #fff;
+                        tbody {
+                            .none {
+                                .pst {
+                                    .cart {
+                                        font-size: 40px;
+                                    }
+                                    .desc {
+                                        font-size: 20px;
+                                    }
+                                    .linkbuy {
+                                        padding: 8px 30px;
+                                        font-size: 15px;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
                 .form-group {
@@ -189,6 +205,24 @@
                             &:nth-child(2),
                             &:last-child {
                                 display: none;
+                            }
+                        }
+                        th {
+                            &:nth-child(6) {
+                                width: 1%;
+                            }
+                        }
+                        tbody {
+                            position: relative;
+                            .none {
+                                display: block;
+                                width: 100%;
+                                .pst {
+                                    min-width: 320px;
+                                    .cart {
+                                        font-size: 30px;
+                                    }
+                                }
                             }
                         }
                     }
