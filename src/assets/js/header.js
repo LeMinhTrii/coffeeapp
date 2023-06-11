@@ -23,7 +23,7 @@ export const handleSroll = () => {
       ? (header.classList.add("active"),
         iconhd.classList.add("active"),
         cart.classList.add("position"),
-        (document.querySelector(".userbox").style.bottom = "-190px"))
+        (document.querySelector(".userbox").style.bottom = "-225px"))
       : (header.classList.remove("active"),
         iconhd.classList.remove("active"),
         cart.classList.remove("position"),

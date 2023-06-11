@@ -86,5 +86,38 @@
                 }
             }
         }
+        @media (max-width: 1199px) {
+            &_content {
+                width: 80%;
+                &-box {
+                    grid-template-columns: 400px 1fr;
+                }
+            }
+        }
+        @media (max-width: $sm-max) {
+            // Tablet
+            &_content {
+                width: 100%;
+                &-box {
+                    padding: 40px 0 70px;
+                    grid-template-columns: 320px 1fr;
+                }
+            }
+        }
+        @media (max-width: $xs-max) {
+            // Mobile
+            &_content {
+                &-box {
+                    padding: 30px 0 60px;
+                    grid-template-columns: 1fr;
+                    .thumnail {
+                        display: none;
+                    }
+                }
+            }
+        }
+        @media (max-width: $xxs-max) {
+            // Small Mobile
+        }
     }
 }

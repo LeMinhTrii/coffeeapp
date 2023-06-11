@@ -428,6 +428,11 @@
             }
         }
     }
+    @media (max-width: $xs-max) {
+        // Mobile
+        width: 220px;
+        left: -100px;
+    }
 }
 
 @keyframes cart {

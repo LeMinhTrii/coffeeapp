@@ -72,5 +72,48 @@
                 }
             }
         }
+        @media (max-width: $sm-max) {
+            // Tablet
+            padding: 0 0 30px;
+            &_content {
+                &-map {
+                    overflow: hidden;
+                    height: 400px;
+                }
+                &-sendmail {
+                    grid-template-columns: 1fr;
+                    text-align: center;
+                    margin-top: 40px;
+                    .box {
+                        display: none;
+                    }
+                }
+            }
+        }
+        @media (max-width: $xs-max) {
+            // Mobile
+            &_content {
+                &-sendmail {
+                    .form-group {
+                        .line {
+                            display: inherit;
+                            input {
+                                border-radius: 0;
+                                &:last-child {
+                                    margin-top: 20px;
+                                }
+                            }
+                        }
+                        textarea {
+                            width: 100%;
+                            border-radius: 0;
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: $xxs-max) {
+            // Small Mobile
+        }
     }
 }

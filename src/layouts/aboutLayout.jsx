@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { styled } from "styled-components";
 import { PATH } from "../paths";
@@ -9,10 +9,13 @@ const StyleBox = styled.div`
   background: #222;
 `;
 export default function AboutLayout() {
-  scroll();
+  useEffect(() => {
+    scroll();
+    document.querySelector(".header .nav").classList.remove("active");
+  }, []);
   return (
     <>
-      <StyleBox></StyleBox>
+      <StyleBox className="pdnone"></StyleBox>
       <main className="main">
         <section className="about">
           <div className="container">

@@ -30,7 +30,7 @@ export default function AccountLayout() {
   return (
     <>
       {contextHolder}
-      <StyleLogin></StyleLogin>
+      <StyleLogin className="pdnone"></StyleLogin>
       <main className="main">
         <section className="login">
           <div className="container">

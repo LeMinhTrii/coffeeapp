@@ -6,8 +6,9 @@ import { styled } from "styled-components";
 import { PATH } from "../../paths";
 
 export const StyleBox = styled.div`
-  height: 400px;
+  height: 358px;
   position: relative;
+  overflow: auto;
   .wishlistprd {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

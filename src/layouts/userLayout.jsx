@@ -31,11 +31,14 @@ export default function UserLayout() {
   useEffect(() => {
     !data && navigate(PATH.login);
   }, [data]);
+  useEffect(() => {
+    document.querySelector(".header .nav").classList.remove("active");
+  });
 
   return (
     <>
       {contextHolder}
-      <div className="noneuser"></div>
+      <div className="noneuser pdnone"></div>
       <section className="userbanner">
         <div className="container">
           <div className="userbanner_content">

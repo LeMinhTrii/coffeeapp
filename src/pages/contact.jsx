@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { styled } from "styled-components";
 import { scroll } from "../assets/js/scrolltop";
 
@@ -7,10 +7,13 @@ const StyleContact = styled.div`
   background: #222;
 `;
 export default function Contact() {
-  scroll();
+  useEffect(() => {
+    scroll();
+    document.querySelector(".header .nav").classList.remove("active");
+  }, []);
   return (
     <>
-      <StyleContact />
+      <StyleContact className="pdnone" />
       <main className="main">
         <section className="contact">
           <div className="container">
