@@ -108,7 +108,7 @@ export default function AddProduct() {
           {image ? (
             <img src={image} />
           ) : (
-            <img src="/src/assets/image/Default_Image_Thumbnail.png" />
+            <img src="https://res.cloudinary.com/dsuxginpx/image/upload/v1686603852/static/Default_Image_Thumbnail_ie2mqo.png" />
           )}
         </div>
         <div className="form-group">
