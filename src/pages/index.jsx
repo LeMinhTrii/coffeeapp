@@ -188,7 +188,7 @@ export default function Home() {
         <div className="container">
           <div className="selling_content">
             <div className="selling_content-heading headings">
-              Sản Phẩm <span>Bán Chạy</span>
+              Sản Phẩm <span>Giảm Giá</span>
             </div>
             <div className="selling_content-box productcpn">
               <Slider {...slider}>
