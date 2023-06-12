@@ -6,7 +6,6 @@ import AccountItem, {
 import { UserServices } from "../../services/userServices";
 export default function Account() {
   const [user, setUser] = useState();
-  const [messageApi, contextHolder] = message.useMessage();
 
   useEffect(() => {
     getAllUser();
@@ -15,14 +14,13 @@ export default function Account() {
     const user = await UserServices.getUser();
     await setUser(user.data);
   };
-  const handleDeleteUser = async (id) => {
-    await UserServices.deleteUserById(id);
-    getAllUser();
-    messageApi.success("Xóa Tài Khoản Thành Công");
-  };
+  // const handleDeleteUser = async (id) => {
+  //   await UserServices.deleteUserById(id);
+  //   getAllUser();
+  //   messageApi.success("Xóa Tài Khoản Thành Công");
+  // };
   return (
     <>
-      {contextHolder}
       <div className="manager_content-box" style={{ paddingBottom: "50px" }}>
         <div className="textbox">
           <div className="heading">Account</div>
@@ -37,19 +35,12 @@ export default function Account() {
                 <th>Email</th>
                 <th>Mật Khẩu</th>
                 <th>Loại Tài Khoản</th>
-                <th>Hình Đại Diện</th>
-                <th>Chức Năng</th>
+                <th style={{ width: "10%" }}>Hình Đại Diện</th>
               </tr>
             </thead>
             <tbody>
               {user
-                ? user.map((e) => (
-                    <AccountItem
-                      key={e.id}
-                      {...e}
-                      handleDeleteUser={handleDeleteUser}
-                    />
-                  ))
+                ? user.map((e) => <AccountItem key={e.id} {...e} />)
                 : Array.from(Array(6)).map((_, i) => (
                     <SkeletonAccountItem key={i} />
                   ))}

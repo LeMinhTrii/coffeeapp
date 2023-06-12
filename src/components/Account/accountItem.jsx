@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 import Skeleton from "../Skeleton";
 const StyleThumnail = styled.div`
   position: relative;
-  padding-bottom: 100px;
+  padding-bottom: 130px;
   margin-bottom: -50px;
   img,
   .skt {
@@ -26,7 +26,6 @@ export default function AccountItem({
   email,
   type,
   urlAvatar,
-  handleDeleteUser,
 }) {
   return (
     <>
@@ -43,30 +42,6 @@ export default function AccountItem({
           <StyleThumnail>
             <img src={urlAvatar} alt="" />
           </StyleThumnail>
-        </td>
-        <td>
-          <Button
-            type="primary"
-            danger
-            style={{ margin: "0 10px" }}
-            onClick={(e) => {
-              const temp = confirm("Bạn có muốn xóa tài khoản này không");
-              temp && handleDeleteUser(id);
-            }}
-          >
-            Xóa
-          </Button>
-          <Button
-            type="primary"
-            style={{
-              margin: "10px 0 0",
-              background: "#ff9800",
-              opacity: "0",
-              cursor: "default",
-            }}
-          >
-            Sửa
-          </Button>
         </td>
       </tr>
     </>
@@ -96,16 +71,6 @@ export const SkeletonAccountItem = () => {
         </td>
         <td>
           <Skeleton width={100} height={100} />
-        </td>
-        <td>
-          <Skeleton
-            height={30}
-            width={60}
-            marginBottom={10}
-            marginLeft={24}
-            marginTop={-90}
-          />
-          <Skeleton height={30} width={60} marginLeft={24} />
         </td>
       </tr>
     </>

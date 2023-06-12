@@ -25,6 +25,8 @@ export default function UserLayout() {
     openbgrCover,
     closebgrCover,
     handleUpdateCoverImage,
+    image2,
+    handleFile2,
   } = useUpload();
 
   const navigate = useNavigate();
@@ -46,7 +48,7 @@ export default function UserLayout() {
               <div className="coverimage">
                 <img
                   src={
-                    (image && image.avatar) ||
+                    (image2 && image2.avatar) ||
                     (coverimage && coverimage[0].filepath) ||
                     PATH.imageBackgroundDefault
                   }
@@ -131,7 +133,7 @@ export default function UserLayout() {
           <div className="thumnail">
             <img
               src={
-                (image && image.avatar) ||
+                (image2 && image2.avatar) ||
                 (coverimage && coverimage[0].filepath) ||
                 PATH.imageBackgroundDefault
               }
@@ -148,7 +150,7 @@ export default function UserLayout() {
                 <input
                   type="file"
                   name="file"
-                  onChange={(ev) => handleFile(ev)}
+                  onChange={(ev) => handleFile2(ev)}
                 />
               </label>
             </label>

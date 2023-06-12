@@ -7,6 +7,7 @@ import { useAuth } from "./AuthContext";
 const UploadContext = createContext();
 export const UploadContextProvider = ({ children }) => {
   const [image, setImage] = useState({});
+  const [image2, setImage2] = useState({});
   const [file, setFile] = useState({});
   const [messageApi, contextHolder] = message.useMessage();
   const { getDataUser } = useAuth();
@@ -39,6 +40,19 @@ export const UploadContextProvider = ({ children }) => {
       setImage({ ...image, avatar: "" });
     }
   };
+  const handleFile2 = (ev) => {
+    const file = ev.target.files[0];
+    setFile({ file: file });
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    if (file) {
+      reader.onload = () => {
+        setImage2({ ...image2, avatar: reader.result });
+      };
+    } else {
+      setImage2({ ...image2, avatar: "" });
+    }
+  };
   const handleClose = () => {
     document.querySelector(".popupchangeavatar").classList.remove("active");
   };
@@ -63,6 +77,8 @@ export const UploadContextProvider = ({ children }) => {
         closebgrCover,
         openbgrCover,
         handleUpdateCoverImage,
+        image2,
+        handleFile2,
       }}
     >
       {children}
