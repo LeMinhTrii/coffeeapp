@@ -20,6 +20,9 @@ export default function ListOrderByUser() {
     getAllOrderByUser();
     !data && navigator(PATH.login);
   }, [order, data]);
+  useEffect(() => {
+    scroll();
+  }, []);
   const getAllOrderByUser = async () => {
     if (data && data.id) {
       const Order = await OrderServices.getAllOderByUserId(data && data.id);
