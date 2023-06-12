@@ -26,6 +26,7 @@ export default function AccountItem({
   email,
   type,
   urlAvatar,
+  handleDeleteUser,
 }) {
   return (
     <>
@@ -38,18 +39,31 @@ export default function AccountItem({
           <p style={{ width: "350px", wordBreak: "break-word" }}>{password}</p>
         </td>
         <td>{type}</td>
-        <td style={{ width: "300px" }}>
+        <td style={{ width: "300px", overflow: "hidden" }}>
           <StyleThumnail>
             <img src={urlAvatar} alt="" />
           </StyleThumnail>
         </td>
         <td>
-          <Button type="primary" danger style={{ margin: "0 10px" }}>
+          <Button
+            type="primary"
+            danger
+            style={{ margin: "0 10px" }}
+            onClick={(e) => {
+              const temp = confirm("Bạn có muốn xóa tài khoản này không");
+              temp && handleDeleteUser(id);
+            }}
+          >
             Xóa
           </Button>
           <Button
             type="primary"
-            style={{ margin: "10px 0 0", background: "#ff9800" }}
+            style={{
+              margin: "10px 0 0",
+              background: "#ff9800",
+              opacity: "0",
+              cursor: "default",
+            }}
           >
             Sửa
           </Button>

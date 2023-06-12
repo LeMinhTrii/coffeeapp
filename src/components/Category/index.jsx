@@ -2,8 +2,14 @@ import { Button } from "antd";
 import React from "react";
 import Skeleton from "../Skeleton";
 import { styled } from "styled-components";
+import { Link } from "react-router-dom";
 
-export default function CategoryItem({ id, name_category, filepath }) {
+export default function CategoryItem({
+  id,
+  name_category,
+  filepath,
+  handleDeleteCategory,
+}) {
   return (
     <>
       <tr>
@@ -29,14 +35,22 @@ export default function CategoryItem({ id, name_category, filepath }) {
           />
         </td>
         <td>
-          <Button type="primary" danger style={{ margin: "0 10px" }}>
+          <Button
+            type="primary"
+            danger
+            style={{ margin: "0 10px" }}
+            onClick={(e) => {
+              const temp = confirm("Bạn Có Muốn Xóa Danh Mục Này Không");
+              temp && handleDeleteCategory(id);
+            }}
+          >
             Xóa
           </Button>
           <Button
             type="primary"
             style={{ margin: "10px 0 0", background: "#ff9800" }}
           >
-            Sửa
+            <Link to={`/admin/editcategory/${id}`}>Sửa</Link>
           </Button>
         </td>
       </tr>

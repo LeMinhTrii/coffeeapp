@@ -8,6 +8,7 @@ import { UploadContextProvider } from "./components/Context/UploadContext.jsx";
 import { StatusContextProvider } from "./components/Context/StatusContext.jsx";
 import { CartContextProvider } from "./components/Context/CartContext.jsx";
 import { PaginateProvider } from "./components/Context/PaginateContext.jsx";
+import { WishtListProvider } from "./components/Context/WhistlistContext.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
   <BrowserRouter>
@@ -16,7 +17,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <UploadContextProvider>
           <StatusContextProvider>
             <PaginateProvider>
-              <App />
+              <WishtListProvider>
+                <App />
+              </WishtListProvider>
             </PaginateProvider>
           </StatusContextProvider>
         </UploadContextProvider>

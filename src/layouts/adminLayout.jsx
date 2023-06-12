@@ -40,9 +40,9 @@ export default function AdminLayout() {
             <div className="manager_content-tabs">
               <div className="account">
                 <div className="thumnail">
-                  <img src="/src/assets/image/user.png" alt="" />
+                  <img src={data && data.urlAvatar} alt="" />
                 </div>
-                <p className="name">Lê Minh Trí</p>
+                <p className="name">{data && data.name}</p>
               </div>
               <div className="text">
                 {darkmode ? (

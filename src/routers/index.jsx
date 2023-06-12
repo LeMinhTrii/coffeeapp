@@ -32,6 +32,8 @@ import Tea from "../pages/category/tea";
 import ChangePass from "../pages/user/changepass";
 import OrderList from "../pages/order";
 import ListOrderByUser from "../pages/listorder";
+import AddCategory from "../pages/admin/addCategory";
+import EditCategory from "../pages/admin/editCategory";
 
 export default function Element() {
   const router = useRoutes([
@@ -167,6 +169,14 @@ export default function Element() {
         {
           element: <EditProduct />,
           path: PATH.editproduct,
+        },
+        {
+          element: <AddCategory />,
+          path: PATH.addcategory,
+        },
+        {
+          element: <EditCategory />,
+          path: PATH.editcategory,
         },
       ],
     },

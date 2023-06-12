@@ -19,6 +19,8 @@ export const PATH = {
   category: "/admin/category",
   addproduct: "/admin/addproduct",
   editproduct: "/admin/editproduct/:id",
+  addcategory: "/admin/addcategory",
+  editcategory: "/admin/editcategory/:id",
   user: "/user",
   whistlist: "/user/whistlist",
   // buyhistory: "/user/buyhistory",

@@ -5,7 +5,7 @@ import { Button, message } from "antd";
 import { PATH } from "../../paths";
 import { useNavigate } from "react-router-dom";
 import { ProductServices } from "../../services/productServices";
-const StyleAdd = styled.div`
+export const StyleAdd = styled.div`
   display: grid;
   grid-template-columns: 500px 1fr;
   padding: 90px 100px;

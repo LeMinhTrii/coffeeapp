@@ -23,6 +23,7 @@ export default function Home() {
   const [messageApi, contextHolder] = message.useMessage();
   const { data: categories } = useGetCategory();
   const { handleCart } = useCart();
+
   useEffect(() => {
     categoryid === 0 && scroll();
     (async () => {
@@ -43,20 +44,18 @@ export default function Home() {
     setCategoryId(parseInt(e.target.id));
   };
   const handleHeart = async (obj) => {
-    try {
-      const addWishList = await ProductServices.postWishList(obj);
-      messageApi.success(addWishList.data.message);
-    } catch (error) {
+    if (!localStorage.getItem("user")) {
       messageApi.error("Bạn Phải Đăng Nhập");
+    } else {
+      try {
+        const addWishList = await ProductServices.postWishList(obj);
+        messageApi.success(addWishList.data.message);
+      } catch (error) {
+        messageApi.error(error.response.data.message);
+      }
     }
   };
-  const messageAddCart = localStorage.getItem("addcart");
-  if (messageAddCart) {
-    messageApi.success(messageAddCart);
-    setTimeout(() => {
-      localStorage.removeItem("addcart");
-    }, 2000);
-  }
+
   const handleLink = () => {
     if (categoryid === 0 || categoryid === 1) {
       return PATH.coffee;

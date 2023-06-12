@@ -14,6 +14,7 @@ import { useAuth } from "../components/Context/AuthContext";
 import { PATH } from "../paths";
 import { message } from "antd";
 import { useCart } from "../components/Context/CartContext";
+import { useWishtList } from "../components/Context/WhistlistContext";
 const StyLeDetail = styled.div`
   padding-top: 130px;
   background: #222;
@@ -26,8 +27,8 @@ export default function Detail() {
   const [comment, setComment] = useState();
   const [form, setForm] = useState();
   const { handleCart } = useCart();
-
   const [messageApi, contextHolder] = message.useMessage();
+
   useEffect(() => {
     scroll();
     getProductById(id);
@@ -78,6 +79,22 @@ export default function Detail() {
       handleComment();
     }
   };
+  const handleHeart = async (obj) => {
+    if (!localStorage.getItem("user")) {
+      messageApi.error("Bạn Phải Đăng Nhập");
+    } else {
+      try {
+        const addWishList = await ProductServices.postWishList(obj);
+        messageApi.success(addWishList.data.message);
+      } catch (error) {
+        messageApi.error(error.response.data.message);
+      }
+    }
+  };
+  const addWishList = {
+    user_id: userdata && userdata.id,
+    product_id: data && data.id,
+  };
   return (
     <>
       {contextHolder}
@@ -106,7 +123,10 @@ export default function Detail() {
                 >
                   Thêm Vào Giỏ Hàng
                 </button>
-                <button className="wishlist">
+                <button
+                  className="wishlist"
+                  onClick={(e) => handleHeart(addWishList)}
+                >
                   <FontAwesomeIcon icon={faHeart} />
                 </button>
               </div>

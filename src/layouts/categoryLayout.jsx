@@ -12,6 +12,7 @@ import { useStatus } from "../components/Context/StatusContext";
 import ProductItem from "../components/productItem";
 import { scroll } from "../assets/js/scrolltop";
 import { UsePaginate } from "../components/Context/PaginateContext";
+import { message } from "antd";
 
 const StyleCoffe = styled.div`
   padding: 130px 0 0;
@@ -19,6 +20,7 @@ const StyleCoffe = styled.div`
 `;
 export default function CategoryLayout() {
   const { status, render } = useStatus();
+
   const [name, setName] = useState("Cà Phê");
   const url = location.href.split("category")[1];
   const { handleSort, page } = UsePaginate();
@@ -43,6 +45,7 @@ export default function CategoryLayout() {
       }
     }
   }, [url]);
+
   return (
     <>
       <StyleCoffe className="pdnone"></StyleCoffe>

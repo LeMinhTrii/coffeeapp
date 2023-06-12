@@ -44,4 +44,7 @@ export const UserServices = {
       }
     );
   },
+  deleteUserById: async (id) => {
+    return await axios.delete(`${import.meta.env.VITE_API}/user/${id}`);
+  },
 };

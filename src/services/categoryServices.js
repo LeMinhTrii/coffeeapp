@@ -16,4 +16,21 @@ export const CategoryServices = {
   getProductIdAsc: async (id, req) => {
     return await axios.post(`${import.meta.env.VITE_API}/idasc/${id}`, req);
   },
+  deleCategoryById: async (id) => {
+    return await axios.delete(`${import.meta.env.VITE_API}/category/${id}`);
+  },
+  postCategory: async (req) => {
+    return await axios.post(`${import.meta.env.VITE_API}/category`, req, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+  },
+  putCategory: async (id, req) => {
+    return await axios.put(`${import.meta.env.VITE_API}/category/${id}`, req, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+  },
 };

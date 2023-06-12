@@ -53,11 +53,6 @@ export default function Header() {
   const { data, handleLogout } = useAuth();
   const [value, setValue] = useState();
   const [datasearch, setDataSearch] = useState();
-  // const [cart, setCart] = useState(() => {
-  //   const cartLocal = localStorage.getItem("cart");
-  //   if (cartLocal) return JSON.parse(cartLocal);
-  //   return [];
-  // });
   const { cart, handleMulti, handlePlus, removeProduct } = useCart();
   useEffect(() => {
     value &&
@@ -79,6 +74,14 @@ export default function Header() {
       localStorage.removeItem("success");
     }, 2000);
   }
+  const messageAddCart = localStorage.getItem("addcart");
+  if (messageAddCart) {
+    messageApi.success(messageAddCart);
+    setTimeout(() => {
+      localStorage.removeItem("addcart");
+    }, 2000);
+  }
+
   const handleOpenSearch = () => {
     document.querySelector("#searchproduct").classList.toggle("active");
     document.querySelector(".header_search").classList.toggle("active");

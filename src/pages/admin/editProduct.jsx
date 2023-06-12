@@ -7,7 +7,7 @@ import { styled } from "styled-components";
 import { useGetProduct } from "../../hooks/useGetProduct";
 import { PATH } from "../../paths";
 
-const StyleEdit = styled.div`
+export const StyleEdit = styled.div`
   display: grid;
   grid-template-columns: 500px 1fr;
   padding: 90px 100px;

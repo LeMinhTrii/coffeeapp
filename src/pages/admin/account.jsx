@@ -1,4 +1,4 @@
-import { Button } from "antd";
+import { Button, message } from "antd";
 import React, { useEffect, useState } from "react";
 import AccountItem, {
   SkeletonAccountItem,
@@ -6,23 +6,26 @@ import AccountItem, {
 import { UserServices } from "../../services/userServices";
 export default function Account() {
   const [user, setUser] = useState();
+  const [messageApi, contextHolder] = message.useMessage();
+
   useEffect(() => {
-    getUser();
+    getAllUser();
   }, []);
-  const getUser = async () => {
+  const getAllUser = async () => {
     const user = await UserServices.getUser();
     await setUser(user.data);
   };
-  console.log(user);
+  const handleDeleteUser = async (id) => {
+    await UserServices.deleteUserById(id);
+    getAllUser();
+    messageApi.success("Xóa Tài Khoản Thành Công");
+  };
   return (
     <>
+      {contextHolder}
       <div className="manager_content-box" style={{ paddingBottom: "50px" }}>
         <div className="textbox">
           <div className="heading">Account</div>
-
-          <Button type="primary" className="btnadd">
-            Thêm Tài Khoản
-          </Button>
         </div>
         <div className="productlist_account">
           <table>
@@ -40,7 +43,13 @@ export default function Account() {
             </thead>
             <tbody>
               {user
-                ? user.map((e) => <AccountItem key={e.id} {...e} />)
+                ? user.map((e) => (
+                    <AccountItem
+                      key={e.id}
+                      {...e}
+                      handleDeleteUser={handleDeleteUser}
+                    />
+                  ))
                 : Array.from(Array(6)).map((_, i) => (
                     <SkeletonAccountItem key={i} />
                   ))}
