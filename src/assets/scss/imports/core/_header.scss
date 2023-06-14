@@ -20,6 +20,24 @@
             top: 7px;
         }
     }
+    @media (max-width: 1285px) {
+        &.active {
+            .header_content {
+                &-box {
+                    .heart {
+                        display: none;
+                    }
+                }
+            }
+            .header-nav {
+                ul {
+                    li {
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+    }
     position: fixed;
     z-index: 10;
     @include size(100%, 70px);
